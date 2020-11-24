@@ -18,11 +18,12 @@ package com.example.android.teatime;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.Toolbar;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.android.teatime.model.Tea;
 
@@ -39,8 +40,8 @@ public class MenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
         Toolbar menuToolbar = (Toolbar) findViewById(R.id.menu_toolbar);
-        setSupportActionBar(menuToolbar);
-        getSupportActionBar().setTitle(getString(R.string.menu_title));
+        setActionBar(menuToolbar);
+        getActionBar().setTitle(getString(R.string.menu_title));
 
         // Create an ArrayList of teas
         final ArrayList<Tea> teas = new ArrayList<>();
