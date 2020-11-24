@@ -16,21 +16,61 @@
 
 package com.example.android.teatime;
 
+
+import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner;
+import androidx.test.rule.ActivityTestRule;
+import androidx.test.runner.AndroidJUnit4;// Deprecated
+
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+
+import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.action.ViewActions.click;
+import static androidx.test.espresso.assertion.ViewAssertions.matches;
+import static androidx.test.espresso.matcher.ViewMatchers.withId;
+import static androidx.test.espresso.matcher.ViewMatchers.withText;
+
 /**
  * This test demos a user clicking the decrement button and verifying that it properly decrease
  * the quantity the total cost.
  */
 
 // TODO (1) Add annotation to specify AndroidJUnitRunner class as the default test runner
+    @RunWith(AndroidJUnit4ClassRunner.class)
 public class OrderActivityBasicTest {
 
     // TODO (2) Add the rule that provides functional testing of a single activity
+    @Rule public ActivityTestRule<OrderActivity> mActivityTestRule
+                =   new ActivityTestRule<>(OrderActivity.class);
+
 
     // TODO (3) Finish writing this test which will:
     //          - Check that the initial quantity is zero
     //          - Click on the decrement button
     //          - Verify that the decrement button won't decrease the quantity 0 and cost below $0.00
 
+    @Test
+    public void clickIncrementButton_ChangesQuantityAndCost(){
+        // 1. Find the view
+        onView( (withId(R.id.increment_button)) )
+        // 2. Perform action on the view
+                .perform(click());
+        // 3. Check if the view does what you expected
+        onView(withId(R.id.quantity_text_view)).check(matches(withText("1")));
+        onView(withId(R.id.cost_text_view)).check(matches(withText("$5.00")));
+
+    }
+
+
+    @Test
     public void clickDecrementButton_ChangesQuantityAndCost() {
+        // 1. Find the view
+        onView( (withId(R.id.decrement_button)) )
+                // 2. Perform action on the view
+                .perform(click());
+        // 3. Check if the view does what you expected
+        onView(withId(R.id.quantity_text_view)).check(matches(withText("0")));
+        onView(withId(R.id.cost_text_view)).check(matches(withText("$0.00")));
     }
 }
