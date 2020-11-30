@@ -18,13 +18,14 @@ package com.example.android.teatime;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toolbar;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.text.NumberFormat;
 
@@ -60,8 +61,8 @@ public class OrderActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order);
         Toolbar menuToolbar = (Toolbar) findViewById(R.id.order_toolbar);
-        setSupportActionBar(menuToolbar);
-        getSupportActionBar().setTitle(getString(R.string.order_title));
+        setActionBar(menuToolbar);
+        getActionBar().setTitle(getString(R.string.order_title));
 
         // Set header name and image depending on which item was clicked in the gridView
         Intent intent = getIntent();
