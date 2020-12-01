@@ -57,7 +57,7 @@ public class MenuActivityScreenTest {
     // the OrderActivity opens up with the correct tea name displayed.
     @Test
     public void clickGridViewItem_OpensOrderActivity() {
-        
+
         // 1. Find the view
         onData( anything() ).inAdapterView(withId(R.id.tea_grid_view))
         // 2. Perform action on the view
