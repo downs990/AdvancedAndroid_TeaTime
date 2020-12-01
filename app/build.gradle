@@ -42,5 +42,7 @@ dependencies {
     // Espresso dependencies
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     // TODO (5) Add build dependencies required to use Espresso-Intents
+    androidTestImplementation 'androidx.test.espresso:espresso-intents:3.2.0';
+
 
 }
