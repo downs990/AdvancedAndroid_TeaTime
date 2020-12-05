@@ -18,10 +18,11 @@ package com.example.android.teatime;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toolbar;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.text.NumberFormat;
 
@@ -32,8 +33,8 @@ public class OrderSummaryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_summary);
         Toolbar menuToolbar = (Toolbar) findViewById(R.id.order_summary_toolbar);
-        setSupportActionBar(menuToolbar);
-        getSupportActionBar().setTitle(getString(R.string.order_summary_title));
+        setActionBar(menuToolbar);
+        getActionBar().setTitle(getString(R.string.order_summary_title));
 
         Intent intent = getIntent();
         String teaName = intent.getStringExtra(OrderActivity.EXTRA_TEA_NAME);

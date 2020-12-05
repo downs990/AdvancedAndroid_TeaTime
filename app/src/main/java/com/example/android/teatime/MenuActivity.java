@@ -18,15 +18,15 @@ package com.example.android.teatime;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.annotation.VisibleForTesting;
-import android.support.test.espresso.IdlingResource;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.annotation.VisibleForTesting;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.test.espresso.IdlingResource;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.Toolbar;
 
 import com.example.android.teatime.IdlingResource.SimpleIdlingResource;
 import com.example.android.teatime.model.Tea;
@@ -60,8 +60,8 @@ public class MenuActivity extends AppCompatActivity implements ImageDownloader.D
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
         Toolbar menuToolbar = (Toolbar) findViewById(R.id.menu_toolbar);
-        setSupportActionBar(menuToolbar);
-        getSupportActionBar().setTitle(getString(R.string.menu_title));
+        setActionBar(menuToolbar);
+        getActionBar().setTitle(getString(R.string.menu_title));
 
         // Get the IdlingResource instance
         getIdlingResource();
